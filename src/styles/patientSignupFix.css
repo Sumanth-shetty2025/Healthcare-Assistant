@@ -1,0 +1,371 @@
+/* Patient signup alignment + attractive typography */
+/* Overrides for src/pages/SignupPage.jsx classes */
+
+.login-page--signup {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 14px;
+}
+
+/* IMPORTANT: loginPage.css sets .login-layout as grid.
+   Override grid and vertically center the signup card. */
+.login-layout.login-layout--single {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: none;
+}
+
+/* Keep card centered and visually premium */
+.login-form-container {
+  padding: 2.5rem 2rem !important;
+  display: flex;
+  justify-content: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 18px;
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.12);
+  padding: 1.25rem;
+}
+
+.dark .login-card {
+  background: rgba(17, 24, 39, 0.62);
+  border-color: rgba(55, 65, 81, 0.85);
+}
+
+/* Typography tuning */
+.login-header {
+  margin-bottom: 1.25rem;
+}
+
+.login-header .signup-heading {
+  font-size: 1.95rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.login-header p {
+  color: #6b7280;
+}
+
+/* role selector spacing */
+.role-selector {
+  margin: 0 0 1.4rem;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+/* Form rhythm */
+.form-group {
+  margin-bottom: 1.05rem;
+}
+
+.signup-grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.select-field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.signup-select {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(229, 231, 235, 0.95);
+  border-radius: 10px;
+  background: #fff;
+  color: #0f172a;
+  font-size: 0.98rem;
+  outline: none;
+}
+
+.dark .signup-select {
+  background: #111827;
+  color: #e5e7eb;
+  border-color: rgba(55, 65, 81, 0.7);
+}
+
+.signup-select:focus {
+  border-color: rgba(59,130,246,0.55);
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.14);
+}
+
+/* Floating label + icon layout */
+.floating-field,
+.password-field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-icon {
+  position: absolute;
+  left: 12px;
+  color: #9ca3af;
+  font-size: 1.05rem;
+  pointer-events: none;
+}
+
+.floating-input {
+  width: 100%;
+  padding: 12px 44px 12px 44px;
+  border: 1px solid rgba(229, 231, 235, 0.95);
+  border-radius: 10px;
+  background: transparent;
+  outline: none;
+  font-size: 0.98rem;
+  color: #0f172a;
+}
+
+.dark .floating-input {
+  color: #e5e7eb;
+  border-color: rgba(55, 65, 81, 0.7);
+}
+
+.floating-label {
+  position: absolute;
+  left: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.16s ease, font-size 0.16s ease, top 0.16s ease;
+  color: #6b7280;
+  font-size: 0.95rem;
+  pointer-events: none;
+  padding: 0 0.25rem;
+  background: transparent;
+}
+
+.floating-field .floating-input::placeholder {
+  color: transparent;
+}
+
+.floating-field .floating-input:not(:placeholder-shown) ~ .floating-label,
+.floating-field .floating-input:focus ~ .floating-label,
+.password-field-wrap .floating-input:not(:placeholder-shown) ~ .floating-label,
+.password-field-wrap .floating-input:focus ~ .floating-label {
+  transform: translateY(-160%) scale(0.85);
+  top: 12%;
+  font-size: 0.78rem;
+  background: #fff;
+  color: #374151;
+}
+
+.dark .floating-field .floating-input:not(:placeholder-shown) ~ .floating-label,
+.dark .floating-field .floating-input:focus ~ .floating-label {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.password-toggle:focus {
+  outline: 2px solid rgba(59,130,246,0.2);
+  border-radius: 6px;
+}
+
+.error-message {
+  color: #b91c1c;
+  background: rgba(249, 250, 251, 0.9);
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 0.9rem;
+}
+
+/* Header pill and heading style */
+.auth-mode-pill {
+  display: inline-block;
+  background: #eef2ff;
+  color: #1e293b;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.login-header .signup-heading {
+  font-weight: 700;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid rgba(15,23,42,0.06);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #374151;
+}
+
+.back-btn:hover {
+  background: rgba(15,23,42,0.03);
+  transform: translateY(-1px);
+}
+
+/* Brand title (IntelliHealth) styling: gradient text + hover/focus effect */
+.auth-brand h1 {
+  font-size: 1.7rem;
+  line-height: 1.05;
+  margin: 0;
+  font-weight: 800;
+  background: linear-gradient(90deg, #0ea5e9 0%, #6366f1 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 180ms ease, filter 220ms ease, opacity 180ms ease;
+  display: inline-block;
+}
+
+.auth-brand p {
+  margin: 0;
+  color: #334155;
+  font-weight: 600;
+}
+
+.auth-brand:hover h1,
+.auth-brand:focus-within h1 {
+  transform: translateY(-3px) scale(1.02);
+  filter: drop-shadow(0 10px 20px rgba(99,102,241,0.12));
+}
+
+/* subtle animated underline on hover for the brand */
+.auth-brand h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(14,165,233,0.9), rgba(139,92,246,0.9));
+  border-radius: 4px;
+  transition: width 260ms ease;
+  margin-top: 6px;
+}
+
+.auth-brand:hover h1::after,
+.auth-brand:focus-within h1::after {
+  width: 56%;
+}
+
+/* Header / Brand layout fixes */
+.auth-top-banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(99,102,241,0.08);
+  color: #111827;
+  font-size: 1.05rem;
+}
+
+.auth-brand p {
+  margin-top: 4px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.healthcare-pulse {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .auth-top-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .auth-brand h1 {
+    font-size: 1.4rem;
+  }
+}
+
+.floating-field .floating-input:not(:placeholder-shown) ~ .floating-label,
+.floating-field .floating-input:focus ~ .floating-label {
+  transform: translateY(-110%) scale(0.8);
+  background-color: #fff;
+  padding: 0 0.25rem;
+}
+
+.dark .floating-field .floating-input:not(:placeholder-shown) ~ .floating-label,
+.dark .floating-field .floating-input:focus ~ .floating-label {
+  background-color: #111827;
+}
+
+.submit-btn,
+.google-btn {
+  height: 46px;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+/* Responsive tuning */
+@media (max-width: 992px) {
+  .login-page--signup {
+    padding: 20px 12px;
+  }
+
+  .login-layout.login-layout--single {
+    min-height: auto;
+    padding: 18px 0;
+  }
+
+  .login-form-container {
+    min-height: auto;
+    padding: 2rem 1.2rem !important;
+  }
+
+  .signup-grid.two-col {
+    grid-template-columns: 1fr;
+  }
+}
+

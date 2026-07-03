@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root{
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --primary: #0ea5e9;
+  --accent: #6366f1;
+  --radius: 12px;
+  --shadow: 0 12px 30px rgba(15,23,42,0.06);
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.doctor-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
+  color: var(--text);
+  padding: 20px 28px;
+}
+
+.doctor-header {
+  margin-bottom: 18px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-content h1 {
+  margin: 0 0 4px 0;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.header-content p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid rgba(15,23,42,0.06);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Left column: stats + actions stacked */
+.stats-section {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.stats-section h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px;
+}
+
+.stat-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(14,165,233,0.04), rgba(99,102,241,0.02));
+}
+
+.stat-icon{
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(14,165,233,0.12);
+  font-size: 1.2rem;
+}
+
+.stat-label{
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.stat-value{
+  margin: 2px 0 0 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+/* Right column: recent table */
+.recent-section{
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.section-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.section-header h2{
+  margin:0;
+  font-size:1.05rem;
+}
+
+.view-all-link{
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.patients-table table{
+  width:100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.patients-table th,
+.patients-table td{
+  text-align:left;
+  padding:10px 8px;
+  border-bottom:1px solid rgba(15,23,42,0.04);
+}
+
+.patients-table th{
+  color: var(--muted);
+  font-weight:700;
+  font-size:0.85rem;
+}
+
+.status{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:0.82rem;
+}
+
+.status.pending{ background: #fff7ed; color: #92400e; }
+.status.completed{ background: #ecfdf5; color: #065f46; }
+.status.inprogress{ background: #eef2ff; color: #3730a3; }
+
+.view-btn{
+  background: transparent;
+  border: 1px solid rgba(15,23,42,0.06);
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* Actions section placed below stats on left */
+.actions-section{
+  margin-top:14px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.actions-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+}
+
+.action-card{
+  padding:12px;
+  border-radius:10px;
+  background: linear-gradient(180deg, rgba(99,102,241,0.04), rgba(14,165,233,0.02));
+}
+
+.action-icon{ font-size:1.4rem; }
+
+.action-btn{
+  margin-top:8px;
+  background: var(--accent);
+  color:#fff;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* Responsive */
+@media (min-width: 900px){
+  .stats-grid{ grid-template-columns: repeat(1,1fr); }
+  .dashboard-container{ grid-template-columns: 1fr 2fr; }
+  .actions-grid{ grid-template-columns: repeat(1,1fr); }
+}
+
+@media (max-width: 899px){
+  .dashboard-container{
+    grid-template-columns: 1fr;
+  }
+
+  .stats-section, .recent-section, .actions-section{
+    margin-bottom: 12px;
+  }
+}

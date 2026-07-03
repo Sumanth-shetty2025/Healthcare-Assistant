@@ -1,0 +1,890 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 22px 60px rgba(16, 24, 40, 0.12);
+  --error-color: #dc3545;
+  --radius: 20px;
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.doctor-signup-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(0, 123, 255, 0.14), transparent 38%),
+    radial-gradient(circle at 90% 20%, rgba(0, 194, 255, 0.11), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(99, 102, 241, 0.08), transparent 35%),
+    linear-gradient(180deg, #f7faff 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+/* Background orbs */
+.doctor-signup-bg {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  filter: blur(30px);
+  border-radius: 999px;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.orb-a {
+  top: -120px;
+  left: -120px;
+  background: #2f80ed;
+}
+
+.orb-b {
+  bottom: -160px;
+  right: -160px;
+  background: #00c2ff;
+}
+
+.doctor-signup-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 32px 18px 68px;
+}
+
+.doctor-signup-top-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  box-shadow: 0 12px 32px rgba(16, 24, 40, 0.06);
+  backdrop-filter: blur(14px);
+}
+
+.doctor-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-brand-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(0, 123, 255, 0.12);
+  color: var(--primary-color);
+  font-size: 22px;
+}
+
+.doctor-brand-section h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.doctor-brand-section p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.doctor-healthcare-pulse {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.doctor-pulse-icon {
+  color: #ef4444;
+}
+
+.doctor-pulse-line {
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(0, 123, 255, 0.35);
+}
+
+.doctor-pulse-text {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.doctor-signup-hero {
+  margin-top: 26px;
+  padding: 26px 10px 18px;
+  max-width: 760px;
+}
+
+.doctor-signup-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 123, 255, 0.20);
+  background: rgba(0, 123, 255, 0.08);
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.doctor-signup-hero h1 {
+  margin: 16px 0 12px;
+  font-size: 44px;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.doctor-signup-hero p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.doctor-signup-hero ul {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.doctor-signup-card {
+  margin-top: 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  max-width: 760px;
+}
+
+.doctor-signup-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.doctor-signup-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.doctor-signup-header h2 {
+  margin: 8px 0 6px;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.doctor-signup-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.dark-toggle {
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.dark-toggle:hover {
+  border-color: rgba(0, 123, 255, 0.35);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.12);
+}
+
+/* Back button used in signup header */
+.back-btn {
+  background: transparent;
+  border: 1px solid rgba(15,23,42,0.06);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #374151;
+  font-size: 15px;
+}
+
+.back-btn:hover {
+  background: rgba(0,123,255,0.06);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.doctor-signup-form {
+  margin-top: 16px;
+}
+
+.doctor-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.doctor-form-grid.two-cols {
+  grid-template-columns: 1fr 1fr;
+}
+
+.doctor-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.doctor-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.doctor-form-group label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.doctor-form-group label svg {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+.doctor-form-group input,
+.doctor-form-group select,
+.doctor-form-group textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  padding: 13px 14px;
+  font-size: 16px;
+  outline: none;
+  background: #fff;
+}
+
+.doctor-form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.doctor-form-group input:focus,
+.doctor-form-group select:focus,
+.doctor-form-group textarea:focus {
+  border-color: rgba(0, 123, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.18);
+}
+
+.doctor-signup-form .doctor-form-group select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #9ca3af 50%),
+    linear-gradient(135deg, #9ca3af 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position: calc(100% - 18px) calc(50% + 2px),
+    calc(100% - 13px) calc(50% + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.doctor-signup-form .doctor-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.doctor-signup-submit {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 18px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.04s ease, background-color 0.2s ease;
+}
+
+.doctor-signup-submit:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.doctor-signup-submit:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.doctor-signup-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.doctor-form-error,
+.doctor-signup-footer {
+  text-align: center;
+}
+
+.doctor-form-error,
+.doctor-signup-page .doctor-form-error {
+  color: var(--error-color);
+  background: rgba(220, 53, 69, 0.08);
+  border: 1px solid rgba(220, 53, 69, 0.25);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 10px 0 12px;
+  font-weight: 700;
+}
+
+.doctor-signup-footer {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.doctor-signup-footer a {
+  color: var(--primary-color);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.doctor-signup-footer a:hover {
+  text-decoration: underline;
+}
+
+.spinner {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Layout responsiveness */
+@media (min-width: 920px) {
+  .doctor-signup-shell {
+    max-width: 980px;
+    padding: 30px 18px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 920px) {
+  .doctor-signup-top-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doctor-signup-card {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .doctor-signup-hero h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .doctor-form-grid.two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-signup-shell {
+    padding: 18px 12px 50px;
+  }
+
+  .doctor-signup-hero h1 {
+    font-size: 30px;
+  }
+
+  .doctor-signup-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .doctor-signup-header > div:last-child {
+    justify-content: flex-start;
+  }
+
+  .doctor-brand-section h3 {
+    font-size: 20px;
+  }
+
+  .doctor-form-group input,
+  .doctor-form-group select,
+  .doctor-form-group textarea {
+    font-size: 15px;
+  }
+}
+
+/* Dark mode overrides */
+body.dark .doctor-signup-page {
+  background: radial-gradient(circle at 10% 10%, rgba(0, 123, 255, 0.18), transparent 45%),
+    linear-gradient(180deg, #0b1220 0%, #0a0f18 100%);
+  color: #e5e7eb;
+}
+
+body.dark .doctor-signup-top-banner {
+  background: rgba(17, 24, 39, 0.55);
+  border-color: rgba(55, 65, 81, 0.8);
+}
+
+body.dark .doctor-signup-badge {
+  background: rgba(0, 123, 255, 0.14);
+}
+
+body.dark .doctor-signup-card {
+  background: #0f172a;
+  border-color: #273244;
+}
+
+body.dark .doctor-signup-header p,
+body.dark .doctor-signup-hero p,
+body.dark .doctor-signup-hero ul,
+body.dark .doctor-signup-footer {
+  color: #aab3c2;
+}
+
+body.dark .doctor-signup-form input,
+body.dark .doctor-signup-form select,
+body.dark .doctor-signup-form textarea {
+  background: #0b1220;
+  border-color: #273244;
+  color: #e5e7eb;
+}
+
+body.dark .doctor-signup-form input::placeholder,
+body.dark .doctor-signup-form textarea::placeholder {
+  color: rgba(229, 231, 235, 0.5);
+}
+
+body.dark .doctor-signup-form input:focus,
+body.dark .doctor-signup-form select:focus,
+body.dark .doctor-signup-form textarea:focus {
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.22);
+}
+
+/* Multi-step onboarding */
+.doctor-stepper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 12px 0 6px;
+}
+
+.doctor-step {
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  background: rgba(0, 123, 255, 0.04);
+  border-radius: 14px;
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 900;
+  color: #374151;
+}
+
+.doctor-step span {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.doctor-step.active {
+  border-color: rgba(0, 123, 255, 0.35);
+  background: rgba(0, 123, 255, 0.08);
+  color: var(--primary-color);
+}
+
+.doctor-step.done {
+  background: rgba(16, 185, 129, 0.06);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.doctor-step-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.doctor-step-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.doctor-step-btn.secondary {
+  background: rgba(15, 23, 42, 0.06);
+  color: #374151;
+}
+
+.doctor-step-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* Password field UX */
+.doctor-password-field {
+  position: relative;
+}
+
+.doctor-password-field input {
+  padding-right: 44px;
+}
+
+.doctor-password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.doctor-password-strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.doctor-password-strength .bar {
+  height: 8px;
+  flex: 1;
+  border-radius: 999px;
+  background: rgba(229, 231, 235, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-password-strength .bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 25%;
+  background: rgba(220, 53, 69, 0.6);
+}
+
+.doctor-password-strength .bar.s-2::after { width: 40%; background: rgba(245, 158, 11, 0.7); }
+.doctor-password-strength .bar.s-3::after { width: 60%; background: rgba(59, 130, 246, 0.7); }
+.doctor-password-strength .bar.s-4::after { width: 80%; background: rgba(16, 185, 129, 0.75); }
+.doctor-password-strength .bar.s-5::after { width: 100%; background: rgba(16, 185, 129, 0.85); }
+
+/* Experience slider */
+.doctor-exp-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.doctor-exp-pill {
+  white-space: nowrap;
+  font-weight: 900;
+  color: #374151;
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: rgba(0, 123, 255, 0.06);
+}
+
+/* Availability picker */
+.doctor-availability {
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(0, 123, 255, 0.03);
+}
+
+.doctor-availability-days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.day-chip {
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  background: #fff;
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-weight: 900;
+  font-size: 13px;
+  color: #374151;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.day-chip input {
+  width: 16px;
+  height: 16px;
+}
+
+.day-chip.on {
+  border-color: rgba(0, 123, 255, 0.35);
+  background: rgba(0, 123, 255, 0.08);
+  color: var(--primary-color);
+}
+
+.doctor-availability-time {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.time-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.time-field span {
+  font-weight: 800;
+  color: var(--muted);
+}
+
+/* Uploads */
+.doctor-upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.doctor-upload-item {
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(0, 123, 255, 0.03);
+}
+
+.doctor-upload-label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 900;
+  color: #374151;
+}
+
+.doctor-upload-label.inline {
+  gap: 8px;
+}
+
+.doctor-upload-label input[type="file"] {
+  border: 1px dashed rgba(0, 123, 255, 0.35);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 12px;
+  border-radius: 14px;
+}
+
+.doctor-upload-hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* Terms */
+.doctor-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  background: rgba(0, 123, 255, 0.03);
+}
+
+.doctor-terms input {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+}
+
+.doctor-terms span {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 800;
+  color: #374151;
+}
+
+.doctor-terms em {
+  font-style: normal;
+  color: var(--muted);
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Success modal */
+.doctor-success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+  padding: 16px;
+}
+
+.doctor-success-modal {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  box-shadow: 0 30px 80px rgba(16, 24, 40, 0.22);
+  padding: 22px;
+  text-align: center;
+}
+
+.doctor-success-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+  background: rgba(16, 185, 129, 0.12);
+  color: rgba(16, 185, 129, 1);
+  font-size: 26px;
+}
+
+.doctor-success-modal h3 {
+  margin: 6px 0 8px;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.doctor-success-modal p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.doctor-success-btn {
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 18px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+@media (max-width: 720px) {
+  .doctor-upload-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-availability-time {
+    grid-template-columns: 1fr;
+  }
+}
+
+body.dark .doctor-step {
+  background: rgba(0, 123, 255, 0.10);
+  border-color: rgba(55, 65, 81, 0.8);
+  color: #e5e7eb;
+}
+
+body.dark .doctor-step span {
+  color: #aab3c2;
+}
+
+body.dark .doctor-step.active {
+  border-color: rgba(0, 123, 255, 0.45);
+}
+
+body.dark .doctor-step-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
+}
+
+body.dark .doctor-password-toggle {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(55, 65, 81, 0.8);
+}
+
+body.dark .doctor-exp-pill,
+body.dark .day-chip,
+body.dark .doctor-availability,
+body.dark .doctor-upload-item,
+body.dark .doctor-terms {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(55, 65, 81, 0.8);
+  color: #e5e7eb;
+}
+
+body.dark .doctor-success-modal {
+  background: rgba(17, 24, 39, 0.96);
+  border-color: rgba(55, 65, 81, 0.8);
+  color: #e5e7eb;
+}
+
+body.dark .doctor-success-modal p {
+  color: #aab3c2;
+}
+

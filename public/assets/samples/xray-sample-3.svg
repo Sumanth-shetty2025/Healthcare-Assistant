@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-labelledby="title desc">
+  <title id="title">Chest X-ray Sample 3</title>
+  <desc id="desc">Illustrative chest x-ray style image.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1a36" />
+      <stop offset="100%" stop-color="#1a4f8a" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="420" fill="url(#bg3)" />
+  <ellipse cx="300" cy="180" rx="215" ry="148" fill="#ccefff" fill-opacity="0.16" />
+  <ellipse cx="232" cy="202" rx="92" ry="128" fill="#e0f6ff" fill-opacity="0.36" />
+  <ellipse cx="368" cy="202" rx="92" ry="128" fill="#e0f6ff" fill-opacity="0.36" />
+  <rect x="287" y="102" width="26" height="235" rx="13" fill="#e0f6ff" fill-opacity="0.3" />
+  <path d="M178 165 Q232 150 270 178" stroke="#8cd3ff" stroke-opacity="0.55" stroke-width="4" fill="none" />
+  <path d="M330 178 Q370 150 422 170" stroke="#8cd3ff" stroke-opacity="0.55" stroke-width="4" fill="none" />
+  <line x1="116" y1="342" x2="484" y2="342" stroke="#9dd8ff" stroke-opacity="0.35" stroke-width="5" />
+  <text x="26" y="38" fill="#eaf7ff" font-size="24" font-family="Arial, sans-serif">Sample X-Ray</text>
+</svg>

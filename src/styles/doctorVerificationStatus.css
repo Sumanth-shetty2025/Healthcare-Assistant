@@ -1,0 +1,495 @@
+:root {
+  --doctor-status-bg: radial-gradient(circle at 12% 18%, rgba(16, 185, 129, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(14, 165, 233, 0.18), transparent 26%),
+    radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.12), transparent 36%),
+    linear-gradient(180deg, #f4fbfa 0%, #eef6fb 100%);
+  --doctor-status-surface: rgba(255, 255, 255, 0.84);
+  --doctor-status-border: rgba(15, 23, 42, 0.08);
+  --doctor-status-shadow: 0 26px 72px rgba(8, 15, 31, 0.12);
+  --doctor-status-text: #0f172a;
+  --doctor-status-muted: #5b6b82;
+  --doctor-status-primary: #0f766e;
+  --doctor-status-primary-soft: rgba(15, 118, 110, 0.10);
+  --doctor-status-danger: #b42318;
+  --doctor-status-danger-soft: rgba(180, 35, 24, 0.10);
+}
+
+.doctor-status-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--doctor-status-bg);
+  color: var(--doctor-status-text);
+}
+
+.doctor-status-bg {
+  position: absolute;
+  inset: auto;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(12px);
+  opacity: 0.75;
+}
+
+.doctor-status-bg--one {
+  width: 320px;
+  height: 320px;
+  top: -80px;
+  left: -90px;
+  background: rgba(16, 185, 129, 0.14);
+  animation: floatOne 14s ease-in-out infinite;
+}
+
+.doctor-status-bg--two {
+  width: 260px;
+  height: 260px;
+  right: -70px;
+  bottom: 10%;
+  background: rgba(14, 165, 233, 0.12);
+  animation: floatTwo 16s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, 24px) scale(1.06); }
+}
+
+@keyframes floatTwo {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-18px, -22px) scale(1.05); }
+}
+
+.doctor-status-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.doctor-status-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 18px;
+  animation: fadeUp 420ms ease-out both;
+}
+
+.doctor-status-hero-copy,
+.doctor-status-status,
+.doctor-status-card,
+.doctor-status-panel {
+  backdrop-filter: blur(16px);
+  background: var(--doctor-status-surface);
+  border: 1px solid var(--doctor-status-border);
+  box-shadow: var(--doctor-status-shadow);
+}
+
+.doctor-status-hero-copy {
+  border-radius: 28px;
+  padding: 28px;
+}
+
+.doctor-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.doctor-status-pill.is-pending {
+  color: var(--doctor-status-primary);
+  background: var(--doctor-status-primary-soft);
+}
+
+.doctor-status-pill.is-rejected {
+  color: var(--doctor-status-danger);
+  background: var(--doctor-status-danger-soft);
+}
+
+.doctor-status-hero-copy h1 {
+  margin: 16px 0 8px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.doctor-status-hero-copy p {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--doctor-status-muted);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.doctor-status-status {
+  border-radius: 28px;
+  padding: 22px;
+  display: grid;
+  gap: 14px;
+  align-content: center;
+}
+
+.doctor-status-status.pending {
+  border-color: rgba(15, 118, 110, 0.18);
+}
+
+.doctor-status-status.rejected {
+  border-color: rgba(180, 35, 24, 0.18);
+}
+
+.doctor-status-status-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  color: #fff;
+}
+
+.doctor-status-status.pending .doctor-status-status-icon {
+  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+}
+
+.doctor-status-status.rejected .doctor-status-status-icon {
+  background: linear-gradient(135deg, #b42318 0%, #ef4444 100%);
+}
+
+.doctor-status-status-label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--doctor-status-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.doctor-status-status strong {
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.doctor-status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.doctor-status-card {
+  border-radius: 26px;
+}
+
+.doctor-status-card--summary {
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  min-height: 116px;
+  animation: fadeUp 520ms ease-out both;
+}
+
+.doctor-status-card--summary:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.doctor-status-card--summary:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.doctor-status-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #0f766e;
+  background: var(--doctor-status-primary-soft);
+  font-size: 20px;
+  flex: 0 0 auto;
+}
+
+.doctor-status-card--summary h2,
+.doctor-status-panel h2 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.doctor-status-card--summary p {
+  margin: 8px 0 0;
+  color: var(--doctor-status-muted);
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.doctor-status-card--detail {
+  padding: 22px;
+  display: grid;
+  gap: 18px;
+  animation: fadeUp 600ms ease-out both;
+}
+
+.doctor-status-panel {
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.doctor-status-panel--rejected {
+  border-color: rgba(180, 35, 24, 0.16);
+}
+
+.doctor-status-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-status-panel-title svg {
+  color: #0f766e;
+  font-size: 20px;
+}
+
+.doctor-status-panel--rejected .doctor-status-panel-title svg {
+  color: #b42318;
+}
+
+.doctor-status-panel p {
+  margin: 14px 0 0;
+  color: var(--doctor-status-muted);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.doctor-status-checklist {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.doctor-status-checklist div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(15, 118, 110, 0.08);
+  color: #134e4a;
+  font-weight: 700;
+}
+
+.doctor-status-checklist svg {
+  color: #0f766e;
+}
+
+.doctor-status-meta {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.doctor-status-meta > div {
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  display: grid;
+  gap: 6px;
+}
+
+.doctor-status-meta span {
+  color: var(--doctor-status-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.doctor-status-meta strong {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.doctor-status-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.doctor-status-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 16px;
+  padding: 14px 18px;
+  min-height: 50px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.doctor-status-action:hover {
+  transform: translateY(-1px);
+}
+
+.doctor-status-action:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.doctor-status-action--primary {
+  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(15, 118, 110, 0.26);
+}
+
+.doctor-status-action--secondary {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: #334155;
+}
+
+.doctor-status-card--loading {
+  min-height: 62vh;
+  border-radius: 32px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 40px 24px;
+}
+
+.doctor-status-card--loading h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -0.04em;
+}
+
+.doctor-status-card--loading p {
+  margin: 0;
+  max-width: 56ch;
+  color: var(--doctor-status-muted);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.doctor-status-spinner {
+  font-size: 40px;
+  color: #0f766e;
+  animation: pulseSpin 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseSpin {
+  0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.85; }
+  50% { transform: rotate(12deg) scale(1.05); opacity: 1; }
+}
+
+.spin {
+  animation: spin 900ms linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .doctor-status-hero,
+  .doctor-status-grid,
+  .doctor-status-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-status-actions {
+    justify-content: stretch;
+  }
+
+  .doctor-status-action {
+    width: 100%;
+  }
+}
+
+body.dark .doctor-status-page {
+  background: radial-gradient(circle at 12% 18%, rgba(45, 212, 191, 0.14), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(56, 189, 248, 0.12), transparent 26%),
+    linear-gradient(180deg, #07111c 0%, #0b1522 100%);
+  color: #e5eef7;
+}
+
+body.dark .doctor-status-hero-copy,
+body.dark .doctor-status-status,
+body.dark .doctor-status-card,
+body.dark .doctor-status-panel {
+  background: rgba(13, 20, 33, 0.78);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+body.dark .doctor-status-pill.is-pending,
+body.dark .doctor-status-checklist div {
+  background: rgba(20, 184, 166, 0.12);
+  color: #a7f3d0;
+}
+
+body.dark .doctor-status-pill.is-rejected {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fecaca;
+}
+
+body.dark .doctor-status-hero-copy p,
+body.dark .doctor-status-card--summary p,
+body.dark .doctor-status-panel p,
+body.dark .doctor-status-meta span {
+  color: #a7b4c7;
+}
+
+body.dark .doctor-status-action--secondary,
+body.dark .doctor-status-meta > div {
+  background: rgba(255, 255, 255, 0.04);
+  color: #e5eef7;
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+body.dark .doctor-status-card-icon {
+  background: rgba(20, 184, 166, 0.12);
+}
+
+body.dark .doctor-status-status-label {
+  color: #9fb1c6;
+}
+
+body.dark .doctor-status-panel-title svg,
+body.dark .doctor-status-card-icon,
+body.dark .doctor-status-spinner,
+body.dark .doctor-status-checklist svg {
+  color: #5eead4;
+}
+
+body.dark .doctor-status-panel--rejected .doctor-status-panel-title svg,
+body.dark .doctor-status-status.rejected .doctor-status-status-icon {
+  color: #fecaca;
+}

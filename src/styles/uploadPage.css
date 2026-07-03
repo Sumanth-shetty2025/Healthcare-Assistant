@@ -1,0 +1,80 @@
+/* Upload Page Styles */
+.analysis-hub-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 56px); /* Adjust 56px based on your navbar height */
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.analysis-hub-content {
+  flex-grow: 1;
+}
+
+.analysis-hub-head h1 {
+  font-weight: 700;
+  color: #343a40;
+}
+
+.analysis-option-card {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.analysis-option-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+.analysis-option-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-right: 1.5rem;
+}
+
+.analysis-option-kicker {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.analysis-option-title {
+  font-weight: 700;
+  color: #343a40;
+}
+
+.analysis-option-copy {
+  color: #6c757d;
+}
+
+.analysis-option-cta {
+  margin-left: auto;
+  font-weight: 600;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+}
+
+.analysis-option-cta i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.analysis-option-card:hover .analysis-option-cta i {
+  transform: translateX(5px);
+}
+
+.upload-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: auto;
+}

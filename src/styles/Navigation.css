@@ -1,0 +1,86 @@
+/* Navigation.css */
+.navbar-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-brand-custom {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #111827;
+  font-weight: bold;
+}
+
+.logo-icon-wrapper {
+  background-color: #14B8A6;
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+.logo-mark-custom {
+  color: white;
+  font-weight: bold;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+}
+
+.welcome-pill {
+  background-color: #e0f2f1;
+  color: #00796b;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin-left: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-link-custom {
+  text-decoration: none;
+  color: #4b5563;
+  margin: 0 1rem;
+  font-size: 1rem;
+  position: relative;
+}
+
+.nav-link-custom.active-link,
+.nav-link-custom[href="/upload"].active-link {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.logout-button:hover {
+  background-color: #ef4444;
+  color: white;
+}

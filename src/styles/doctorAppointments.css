@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root{
+	--bg: #f8fafc;
+	--card: #ffffff;
+	--muted: #6b7280;
+	--text: #0f172a;
+	--primary: #0ea5e9;
+	--accent: #6366f1;
+	--success: #10b981;
+	--danger: #ef4444;
+	--radius: 12px;
+	--shadow: 0 14px 40px rgba(15,23,42,0.06);
+}
+
+body{ font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+
+.doctor-appointments-page{
+	min-height: 100vh;
+	background: linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
+	color: var(--text);
+	padding: 20px;
+}
+
+.doctor-appointments-header-inner{
+	max-width: 1200px;
+	margin: 0 auto 18px;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	gap:12px;
+}
+
+.doctor-dashboard-kicker{
+	font-weight:700;
+	color:var(--accent);
+	margin:0 0 6px 0;
+}
+
+.doctor-appointments-header-inner h1{
+	margin:0 0 4px 0;
+	font-size:1.6rem;
+}
+
+.doctor-appointments-header-inner p{ margin:0; color:var(--muted); }
+
+.doctor-logout-btn{
+	background:transparent;
+	border:1px solid rgba(15,23,42,0.06);
+	padding:8px 12px;
+	border-radius:10px;
+	cursor:pointer;
+	font-weight:700;
+}
+
+.doctor-appointments-container{
+	max-width:1200px;
+	margin:0 auto;
+	display:grid;
+	grid-template-columns: 1fr 360px;
+	gap:18px;
+	align-items:start;
+}
+
+.doctor-stats-grid{
+	display:flex;
+	gap:12px;
+	margin-bottom:12px;
+}
+
+.doctor-stat-card{
+	background:var(--card);
+	border-radius:12px;
+	padding:12px 14px;
+	box-shadow: var(--shadow);
+	flex:1 1 0;
+}
+
+.doctor-stat-card span{ display:block; color:var(--muted); font-weight:600; }
+.doctor-stat-card strong{ display:block; margin-top:6px; font-size:1.2rem; }
+
+.doctor-profile-card{
+	background:var(--card);
+	border-radius:12px;
+	padding:14px;
+	box-shadow: var(--shadow);
+	margin-bottom:12px;
+}
+
+.doctor-profile-grid{
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	gap:8px 16px;
+	margin-top:10px;
+}
+
+.doctor-profile-grid span{ color:var(--muted); font-weight:600; display:block; }
+.doctor-profile-grid strong{ display:block; margin-top:2px; }
+
+.doctor-appointments-list-card{
+	background:var(--card);
+	border-radius:12px;
+	padding:14px;
+	box-shadow: var(--shadow);
+}
+
+.doctor-section-head h2{ margin:0 0 6px 0; }
+.doctor-section-head p{ margin:0 0 12px 0; color:var(--muted); }
+
+.doctor-empty-box{ padding:18px; color:var(--muted); }
+
+.doctor-appointment-grid{ display:grid; gap:12px; }
+
+.doctor-appointment-card{
+	border-radius:10px;
+	padding:12px;
+	background: linear-gradient(180deg, rgba(99,102,241,0.03), rgba(14,165,233,0.02));
+	display:flex;
+	flex-direction:column;
+	gap:8px;
+}
+
+.doctor-appointment-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.doctor-appointment-top h3{ margin:0; font-size:1.02rem; }
+.doctor-appointment-top p{ margin:0; color:var(--muted); }
+
+.doctor-status{ padding:6px 10px; border-radius:999px; font-weight:700; text-transform:capitalize; }
+.doctor-status-doctor{ background: #eef2ff; color:#3730a3; }
+.doctor-status-pending{ background:#fff7ed; color:#92400e; }
+.doctor-status-accepted{ background:#ecfdf5; color:#065f46; }
+.doctor-status-rejected{ background:#fef2f2; color:#b91c1c; }
+
+.doctor-appointment-details p{ margin:6px 0; color:var(--text); }
+.doctor-appointment-details a{ color:var(--accent); text-decoration:underline; }
+
+.doctor-appointment-actions{ display:flex; gap:8px; margin-top:6px; }
+.doctor-appointment-action{ padding:8px 10px; border-radius:8px; border:none; cursor:pointer; font-weight:700; }
+.doctor-appointment-action.accept{ background:var(--accent); color:#fff; }
+.doctor-appointment-action.reject{ background:transparent; border:1px solid rgba(15,23,42,0.06); }
+
+/* Review page specific styles */
+.doctor-review-card{ padding:20px; border-radius:16px; }
+.doctor-review-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:12px 24px; margin-top:12px; }
+.doctor-review-grid > div{ background:transparent; padding:6px 0; border-bottom:1px dashed rgba(15,23,42,0.03); }
+.doctor-review-grid > div span{ display:block; color:var(--muted); font-size:0.9rem; }
+.doctor-review-grid > div strong{ display:block; color:var(--text); margin-top:6px; font-weight:700; }
+.doctor-review-grid-full{ grid-column: 1 / -1; display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:8px; }
+.doctor-review-grid-full a{ padding:8px 12px; background:linear-gradient(90deg,var(--primary),var(--accent)); color:#fff; border-radius:10px; text-decoration:none; font-weight:700; }
+
+.doctor-review-form{ display:flex; flex-direction:column; gap:12px; margin-top:8px; }
+.doctor-review-field label{ display:block; font-weight:700; color:var(--muted); margin-bottom:6px; }
+.doctor-review-field textarea{ width:100%; min-height:86px; padding:10px 12px; border-radius:10px; border:1px solid rgba(15,23,42,0.06); resize:vertical; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; color:var(--text); }
+.doctor-review-field textarea:focus{ outline:none; box-shadow:0 6px 20px rgba(14,165,233,0.12); border-color:var(--primary); }
+
+.doctor-review-error{ color:var(--danger); font-weight:700; margin:6px 0; }
+.doctor-review-actions{ display:flex; gap:10px; justify-content:flex-end; margin-top:6px; }
+.doctor-review-actions .doctor-appointment-action{ padding:10px 14px; border-radius:10px; box-shadow:none; }
+.doctor-review-actions .doctor-appointment-action.accept{ background:linear-gradient(90deg,var(--accent),var(--primary)); }
+.doctor-review-actions .doctor-appointment-action.reject{ background:transparent; border:1px solid rgba(15,23,42,0.08); }
+.doctor-review-actions .doctor-appointment-action:hover{ transform:translateY(-1px); }
+
+/* Make the layout feel airier on wide screens */
+@media (min-width:1200px){
+	.doctor-appointments-container{ grid-template-columns: 1fr 380px; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 980px){
+	.doctor-appointments-container{ grid-template-columns: 1fr; }
+	.doctor-appointments-header-inner{ flex-direction:column; align-items:flex-start; gap:10px; }
+	.doctor-profile-grid{ grid-template-columns: 1fr; }
+	.doctor-stats-grid{ flex-direction:column; }
+}
+

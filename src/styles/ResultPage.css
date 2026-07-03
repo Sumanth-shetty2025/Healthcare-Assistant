@@ -1,0 +1,73 @@
+/* ResultPage.css */
+
+.result-page {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+}
+
+.section-heading .eyebrow {
+  font-weight: 600;
+  color: #007bff;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading h1 {
+  font-weight: 700;
+  color: #343a40;
+}
+
+.result-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.confidence-wrap .progress {
+  height: 10px;
+}
+
+.image-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.image-frame {
+  border: 2px dashed #dee2e6;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.image-frame.has-image {
+  padding: 0;
+  border: none;
+}
+
+.image-frame img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.placeholder-text {
+  text-align: center;
+  color: #6c757d;
+}
+
+.symptom-info {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+}

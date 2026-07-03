@@ -1,0 +1,65 @@
+{
+  "tuberculosis": {
+    "characteristics": "Mycobacterium tuberculosis infection causing pulmonary inflammation with characteristic cavitary lesions visible on chest X-ray. Affects upper lobes predominantly with possible bronchial spread patterns.",
+    "symptoms": "Chronic productive cough lasting >3 weeks, hemoptysis, night sweats, fever, unintentional weight loss, chest pain, and fatigue.",
+    "treatment": "Standard 6-month regimen: Rifampicin + Isoniazid + Pyrazinamide + Ethambutol (RIPE). Directly observed therapy essential. Drug sensitivity testing guides regimen modifications.",
+    "prevention": "Tuberculin skin test (TST) screening, prophylactic INH for contacts, BCG vaccination, respiratory isolation during infectious phase, good ventilation.",
+    "advice": "Urgent referral to TB specialist or infectious disease. Ensure treatment adherence with directly observed therapy. Monitor for hepatotoxicity and peripheral neuropathy. Repeat CXR at 2 months."
+  },
+  "pneumonia": {
+    "characteristics": "Acute infection with lobar or segmental consolidation, air bronchograms, and possible pleural effusion on chest X-ray. Interstitial infiltrates common in viral cases.",
+    "symptoms": "Productive cough with purulent sputum, fever >38°C, dyspnea, pleuritic chest pain, chills, and potential respiratory distress.",
+    "treatment": "Empiric antibiotics: Beta-lactam (amoxicillin-clavulanate) + macrolide. De-escalate based on culture results. Consider hospitalization if SpO2 <90% or respiratory rate >30.",
+    "prevention": "Pneumococcal conjugate vaccine (PCV13/PCV20) + PPSV23, annual influenza vaccination, smoking cessation, avoid air pollution exposure.",
+    "advice": "Assess severity using CURB-65 score. Monitor oxygen saturation closely. Follow-up CXR at 4-6 weeks to confirm resolution. Consider ICU if sepsis suspected."
+  },
+  "normal": {
+    "characteristics": "Healthy retinal anatomy with intact photoreceptor layer, normal optic disc with cup-to-disc ratio <0.6, healthy macula with normal foveal reflection, and intact blood vessels.",
+    "symptoms": "No symptoms. Normal visual acuity (20/20 or better), normal color vision, normal visual fields.",
+    "treatment": "No treatment required. Continue routine preventive eye care and annual comprehensive eye exams.",
+    "prevention": "UV protection with sunglasses, omega-3 supplementation, antioxidant-rich diet (leafy greens, berries), manage systemic diseases (diabetes, hypertension).",
+    "advice": "Maintain healthy lifestyle. Continue annual screening exams. Report any vision changes immediately. Educate on symptoms requiring urgent evaluation."
+  },
+  "age-related macular degeneration": {
+    "characteristics": "Progressive degenerative disease affecting central retina. Dry form (atrophic): drusen and RPE changes. Wet form (exudative): choroidal neovascularization with subretinal fluid and hemorrhage.",
+    "symptoms": "Gradual central vision blurring, wavy lines (metamorphopsia), dark spots in central vision (scotoma). Wet AMD causes sudden severe vision loss.",
+    "treatment": "Dry AMD: AREDS2 supplements (lutein, zeaxanthin, omega-3), zinc. Wet AMD: anti-VEGF injections (ranibizumab, aflibercept, bevacizumab) or photodynamic therapy.",
+    "prevention": "AREDS2 supplementation, UV protection, smoking cessation (major risk factor), blood pressure control, omega-3 fatty acids (fish oil), antioxidant-rich diet.",
+    "advice": "Monthly Amsler grid testing for early detection. Urgent OCT and fluorescein angiography if sudden vision change. Wet AMD needs anti-VEGF therapy within days of onset."
+  },
+  "diabetic retinopathy": {
+    "characteristics": "Progressive microvascular disease: microaneurysms, dot-blot hemorrhages, hard exudates, cotton-wool spots, venous beading. Advances to neovascularization with proliferative disease.",
+    "symptoms": "Often asymptomatic in early stages. Progressive: floaters, blurred vision, scotomas. Proliferative: sudden vision loss due to vitreous hemorrhage or traction retinal detachment.",
+    "treatment": "Non-proliferative: intensive glucose control (HbA1c <7%), anti-VEGF for macular edema. Proliferative: pan-retinal photocoagulation (PRP) or anti-VEGF (bevacizumab, ranibizumab).",
+    "prevention": "Strict glycemic control (HbA1c <7%), blood pressure <130/80 mmHg, annual dilated ophthalmologic exams, ACE inhibitors or ARBs, statin therapy.",
+    "advice": "Refer to retinal specialist if any diabetic retinopathy detected. Anti-VEGF therapy is first-line for diabetic macular edema. Fundus photography for monitoring progression."
+  },
+  "cataract": {
+    "characteristics": "Opacity of lens affecting visual clarity. Can be nuclear (brown), cortical (white), or posterior subcapsular. May cause glare, halos around lights, and reduced contrast sensitivity.",
+    "symptoms": "Gradual painless vision loss, blurred or hazy vision, increased difficulty with night driving, sensitivity to light and glare, faded color perception.",
+    "treatment": "Early: stronger glasses/contact lenses, anti-glare coatings. Definitive: phacoemulsification with intraocular lens implant. Surgery indicated when vision affects quality of life.",
+    "prevention": "UV protection (sunglasses, brimmed hat), antioxidant supplements, avoid smoking, manage diabetes and hypertension, limit corticosteroid use.",
+    "advice": "Refer to ophthalmologist for cataract surgery evaluation. No medication reverses cataracts. Post-operative glasses adjustment needed. YAG capsulotomy if posterior capsule opacifies."
+  },
+  "myopia": {
+    "characteristics": "Refractive error: eyeball too long or cornea too curved. Light focuses in front of retina. Fundus shows tilted optic disc, crescent, and myopic crescents.",
+    "symptoms": "Blurred distance vision, squinting to see far objects, eye strain, headaches. Near vision typically normal.",
+    "treatment": "Correction: eyeglasses, contact lenses, or refractive surgery (LASIK, PRK, ICL). Progression control: atropine eye drops, multifocal contact lenses.",
+    "prevention": "Outdoor time (2+ hours daily) reduces myopia progression in children, proper distance from screens (20-20-20 rule), adequate lighting, regular eye exams.",
+    "advice": "Regular eye exams to monitor progression. Consider myopia control options for children. Refractive surgery candidates: stable refraction for ≥1 year, age ≥18."
+  },
+  "retinal vein occlusion": {
+    "characteristics": "Branch retinal vein occlusion (BRVO) or central retinal vein occlusion (CRVO). Venous blockage causes intraretinal hemorrhages, cotton-wool spots, retinal edema, and ischemia.",
+    "symptoms": "Sudden unilateral vision loss or visual field defect, floaters, blurred vision. May be asymptomatic if peripherally located.",
+    "treatment": "Anti-VEGF intravitreal injections (ranibizumab, aflibercept), corticosteroid implants (dexamethasone, triamcinolone), laser photocoagulation for macular edema.",
+    "prevention": "Blood pressure control <130/80 mmHg, anticoagulation if thrombophilia, carotid screening, diabetes management, smoking cessation.",
+    "advice": "Emergency OCT and fluorescein angiography. Assess for neovascularization. Anti-VEGF is first-line for macular edema. Monitor vision closely during treatment."
+  },
+  "pneumoconiosis": {
+    "characteristics": "Occupational lung disease from chronic inhalation of mineral dust (silica, asbestos, coal). Progressive pulmonary fibrosis with nodular or irregular small opacities on chest X-ray.",
+    "symptoms": "Progressive dyspnea on exertion, chronic cough (dry to productive), chest pain, wheezing. Advanced: hypoxemia, cor pulmonale.",
+    "treatment": "Supportive care, oxygen therapy for hypoxemia, ACE inhibitors for pulmonary hypertension. No cure; focus on preventing progression and complications.",
+    "prevention": "Workplace exposure prevention: dust suppression, respiratory protection (N95/P100), regular air quality monitoring, health surveillance programs.",
+    "advice": "Occupational history critical for diagnosis. Restrict further exposure. Annual spirometry and CXR for monitoring. Lung cancer surveillance if asbestos exposure."
+  }
+}

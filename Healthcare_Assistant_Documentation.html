@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Assistant - Complete Project Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Cover Page */
+        .cover-page {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 3px solid #0f9bd7;
+            margin-bottom: 40px;
+        }
+
+        .cover-page h1 {
+            font-size: 48px;
+            color: #051937;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cover-page .subtitle {
+            font-size: 24px;
+            color: #0f9bd7;
+            margin-bottom: 40px;
+        }
+
+        .cover-page .description {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .version-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Styling */
+        h1 {
+            color: #051937;
+            font-size: 36px;
+            margin: 30px 0 20px 0;
+            border-bottom: 3px solid #0f9bd7;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #0f9bd7;
+            font-size: 28px;
+            margin: 25px 0 15px 0;
+        }
+
+        h3 {
+            color: #134074;
+            font-size: 22px;
+            margin: 20px 0 12px 0;
+        }
+
+        h4 {
+            color: #08c8b1;
+            font-size: 18px;
+            margin: 15px 0 10px 0;
+        }
+
+        p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        .section {
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        /* Code blocks */
+        code, pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        pre {
+            padding: 15px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        code {
+            color: #d63384;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th {
+            background-color: #0f9bd7;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Boxes */
+        .info-box, .feature-box, .process-box {
+            border-left: 4px solid #0f9bd7;
+            background-color: #f0f8ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .feature-box {
+            border-left-color: #08c8b1;
+            background-color: #f0fffe;
+        }
+
+        .process-box {
+            border-left-color: #134074;
+            background-color: #f5f9ff;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 2px;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            margin: 2px 2px 2px 0;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-success { background-color: #d4edda; color: #155724; }
+        .badge-info { background-color: #d1ecf1; color: #0c5460; }
+        .badge-warning { background-color: #fff3cd; color: #856404; }
+        .badge-danger { background-color: #f8d7da; color: #721c24; }
+
+        /* Flow diagrams (ASCII art style) */
+        .flow-diagram {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background-color: #f0f8ff;
+            border: 1px solid #0f9bd7;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .toc h3 {
+            color: #0f9bd7;
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin: 6px 0;
+            padding-left: 20px;
+        }
+
+        .toc li:before {
+            content: "→ ";
+            color: #0f9bd7;
+            margin-left: -20px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .toc ul ul {
+            margin-left: 20px;
+        }
+
+        /* Page breaks for PDF */
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            h1 { page-break-before: always; }
+            .section { page-break-inside: avoid; }
+            .cover-page { page-break-after: always; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+        }
+
+        /* Button */
+        .download-btn {
+            display: inline-block;
+            background-color: #0f9bd7;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .download-btn:hover {
+            background-color: #0d7fa8;
+        }
+
+        .print-instructions {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #0f9bd7;
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: #0f9bd7;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .feature-item {
+            background: #f0f8ff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border-left: 3px solid #0f9bd7;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .feature-item strong { color: #0f9bd7; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <h1>🏥 Healthcare Assistant</h1>
+            <div class="subtitle">AI-Powered Medical Diagnostic Platform</div>
+            <div class="description">
+                <p>A comprehensive web application that analyzes medical images (Chest X-rays and Retina fundus images) using machine learning and connects patients with specialized doctors for appointments.</p>
+            </div>
+            <div class="version-info">
+                <p><strong>Version:</strong> 1.0</p>
+                <p><strong>Last Updated:</strong> April 17, 2026</p>
+                <p><strong>Status:</strong> Production Ready ✅</p>
+            </div>
+        </div>
+
+        <!-- Print Instructions -->
+        <div class="print-instructions">
+            <strong>📥 To Download as PDF:</strong>
+            <p>Use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF" option.</p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3>📑 Table of Contents</h3>
+            <ul>
+                <li>Project Overview</li>
+                <li>Authentication System</li>
+                <li>Patient Workflow (Steps 1-11)</li>
+                <li>Doctor Workflow (Steps 12-15)</li>
+                <li>Backend API</li>
+                <li>Database Structure</li>
+                <li>Technology Stack</li>
+                <li>Key Features & Deployment</li>
+            </ul>
+        </div>
+
+        <!-- Section 1: Project Overview -->
+        <h1>1. Project Overview</h1>
+        <div class="section">
+            <p><strong>Healthcare Assistant</strong> is an AI-powered medical diagnostic platform that analyzes medical images and connects patients with specialized doctors for appointments.</p>
+
+            <h3>🎯 Primary Objectives</h3>
+            <ul>
+                <li>Provide real-time AI analysis of medical images (X-rays and retina images)</li>
+                <li>Match patients with appropriate doctors based on diagnosis</li>
+                <li>Facilitate secure appointment booking with scanning report upload</li>
+                <li>Enable doctors to review patient data and schedule appointments</li>
+                <li>Track appointment status and provide notifications</li>
+            </ul>
+
+            <h3>✨ Key Features</h3>
+            <div class="feature-list">
+                <div class="feature-item"><strong>✓</strong> Dual-modality AI analysis (X-ray & Retina)</div>
+                <div class="feature-item"><strong>✓</strong> Real-time disease prediction</div>
+                <div class="feature-item"><strong>✓</strong> Doctor recommendation system</div>
+                <div class="feature-item"><strong>✓</strong> Appointment booking system</div>
+                <div class="feature-item"><strong>✓</strong> Secure file upload</div>
+                <div class="feature-item"><strong>✓</strong> Real-time notifications</div>
+                <div class="feature-item"><strong>✓</strong> Patient & Doctor dashboards</div>
+                <div class="feature-item"><strong>✓</strong> Firebase authentication</div>
+            </div>
+        </div>
+
+        <!-- Section 2: Architecture -->
+        <h1>2. System Architecture</h1>
+        <div class="section">
+            <div class="flow-diagram">Frontend (React)
+│
+├─ Authentication
+├─ Image Upload & Analysis
+├─ Results Display
+├─ Doctor Recommendation
+└─ Appointment Management
+  │
+  ├─────────────────────┬─────────────────────┐
+  │                     │                     │
+  ▼                     ▼                     ▼
+Backend (Flask)    Firebase              Cloud Storage
+├─ ML Models       ├─ Auth               ├─ Scanning
+│ ├─ X-ray        ├─ Realtime DB        └─ Reports
+│ └─ Retina       └─ Firestore
+├─ Prediction API
+├─ RAG Engine
+└─ Image Processing
+            </div>
+
+            <h3>Core Components</h3>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Technology</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td><strong>Frontend</strong></td>
+                    <td>React 18, React Router v6</td>
+                    <td>User interface and interactions</td>
+                </tr>
+                <tr>
+                    <td><strong>Backend</strong></td>
+                    <td>Flask (Python)</td>
+                    <td>API endpoints and ML inference</td>
+                </tr>
+                <tr>
+                    <td><strong>Database</strong></td>
+                    <td>Firebase Realtime Database</td>
+                    <td>User, doctor, appointment data</td>
+                </tr>
+                <tr>
+                    <td><strong>File Storage</strong></td>
+                    <td>Firebase Cloud Storage</td>
+                    <td>Medical reports and images</td>
+                </tr>
+                <tr>
+                    <td><strong>ML Models</strong></td>
+                    <td>TensorFlow/Keras</td>
+                    <td>Disease prediction and analysis</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 3: Authentication -->
+        <h1>3. Authentication System</h1>
+        <div class="section">
+            <h3>Login & Signup Methods</h3>
+            <div class="feature-list">
+                <div class="feature-item">📧 Email/Password</div>
+                <div class="feature-item">🔑 Google OAuth</div>
+                <div class="feature-item">👥 Role-based Access</div>
+                <div class="feature-item">🔄 Password Reset</div>
+            </div>
+
+            <h3>User Roles</h3>
+            <table>
+                <tr>
+                    <th>Role</th>
+                    <th>Access</th>
+                    <th>Storage Location</th>
+                </tr>
+                <tr>
+                    <td><strong>Patient</strong></td>
+                    <td>Upload images, Find doctors, Book appointments, Track status</td>
+                    <td>/users/{uid}</td>
+                </tr>
+                <tr>
+                    <td><strong>Doctor</strong></td>
+                    <td>View requests, Accept/Reject appointments, Schedule checkups</td>
+                    <td>/doctors/{uid}</td>
+                </tr>
+            </table>
+
+            <h3>Doctor Profile Setup</h3>
+            <p>Additional fields for doctor signup:</p>
+            <ul>
+                <li>Full Name & Email</li>
+                <li>Specialization (Pulmonology, Ophthalmology, etc.)</li>
+                <li>Hospital/Clinic Name</li>
+                <li>Location & Years of Experience</li>
+                <li>Availability & License Number</li>
+                <li>Professional Bio</li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Patient Workflow -->
+        <h1>4. Patient Workflow (Complete Journey)</h1>
+        <div class="section">
+            <h3 style="color: #0f9bd7;">Step 1️⃣ : Login Page</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /login</p>
+                <p><strong>Process:</strong></p>
+                <ol>
+                    <li>Select role: Patient or Doctor</li>
+                    <li>Enter email and password OR click Google Sign-In</li>
+                    <li>System validates against Firebase Auth</li>
+                    <li>Checks user role in Firebase Database</li>
+                    <li>Redirects: Patient → Home, Doctor → Dashboard</li>
+                </ol>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 2️⃣ : Home Page</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /</p>
+                <ul>
+                    <li>Hero section with project overview</li>
+                    <li>Feature highlights and statistics</li>
+                    <li>Call-to-action buttons: "Upload & Predict" and "View Results"</li>
+                    <li>Sample images and disease categories</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 3️⃣ : Choose Analysis Pathway</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /upload</p>
+                <p>Patient selects medical imaging type:</p>
+                <ul>
+                    <li><strong>Chest X-ray Analysis</strong> → /upload/chest (Pulmonology)</li>
+                    <li><strong>Eye Disease Analysis</strong> → /upload/eye (Ophthalmology)</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 4️⃣ : Upload Medical Image</h3>
+            <div class="process-box">
+                <p><strong>Chest X-ray Diseases Detected:</strong></p>
+                <ul>
+                    <li>✅ Normal - No significant thoracic abnormality</li>
+                    <li>🫁 Pneumonia - Infectious lung opacity pattern</li>
+                    <li>🫀 Tuberculosis - TB-related pulmonary changes</li>
+                </ul>
+                <p><strong>Retina Diseases Detected:</strong></p>
+                <ul>
+                    <li>✅ Normal Retina - Healthy retinal structure</li>
+                    <li>👁️ Age-Related Macular Degeneration (AMD)</li>
+                    <li>☀️ Cataract - Lens opacity patterns</li>
+                    <li>🩸 Diabetic Retinopathy - Vascular lesions</li>
+                    <li>👓 Myopia - Myopic retinal changes</li>
+                    <li>🌊 Retinal Vein Occlusion (RVO)</li>
+                </ul>
+                <p><strong>Upload Specifications:</strong></p>
+                <ul>
+                    <li>Format: PNG, JPG, JPEG, TIFF</li>
+                    <li>Max Size: 25MB</li>
+                    <li>Shows preview before submission</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 5️⃣ : AI Analysis Processing</h3>
+            <div class="process-box">
+                <p><strong>Backend Process:</strong></p>
+                <ol>
+                    <li>Receive image from frontend</li>
+                    <li>Resize image to 224x224 pixels</li>
+                    <li>Normalize pixel values</li>
+                    <li>Convert to tensor</li>
+                    <li>Load appropriate TensorFlow model</li>
+                    <li>Run inference (prediction)</li>
+                    <li>Generate GradCAM visualization (heatmap)</li>
+                    <li>Return: prediction, confidence, top_predictions, gradcam</li>
+                </ol>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 6️⃣ : View Results</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /result</p>
+                <p>Results displayed include:</p>
+                <ul>
+                    <li>Predicted disease name</li>
+                    <li>Confidence percentage (visual bar)</li>
+                    <li>Medical modality (X-ray or Retina)</li>
+                    <li>Top predictions list with probabilities</li>
+                    <li>Uploaded image preview</li>
+                    <li>GradCAM visualization (AI attention heatmap)</li>
+                    <li>Action buttons: Generate Report, Find Doctor, Clear Results</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 7️⃣ : Generate Scanning Report</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /scan-report</p>
+                <p>Scanning report contains:</p>
+                <ul>
+                    <li>Patient information</li>
+                    <li>Disease prediction and confidence</li>
+                    <li>Top predictions list</li>
+                    <li>Uploaded medical image</li>
+                    <li>GradCAM heatmap visualization</li>
+                    <li>Detailed medical analysis text</li>
+                </ul>
+                <p><strong>Storage:</strong></p>
+                <ul>
+                    <li>localStorage (browser persistence)</li>
+                    <li>sessionStorage (current session)</li>
+                    <li>Firebase Storage (cloud backup)</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 8️⃣ : Find Doctor</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /doctor-recommendation</p>
+                <p><strong>Doctor Matching Process:</strong></p>
+                <ol>
+                    <li>Load all registered doctors from Firebase</li>
+                    <li>RAG engine analyzes disease prediction</li>
+                    <li>Match doctors by specialization</li>
+                    <li>Score doctors by:</li>
+                </ol>
+                <ul style="margin-left: 50px;">
+                    <li>Specialization match</li>
+                    <li>Years of experience</li>
+                    <li>Hospital location relevance</li>
+                    <li>Overall match score</li>
+                </ul>
+                <p>Doctors ranked and displayed in cards with:</p>
+                <ul>
+                    <li>Name, specialization, clinic</li>
+                    <li>Location and experience</li>
+                    <li>Availability and bio</li>
+                    <li>"Book Appointment" button</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 9️⃣ : Book Appointment Modal</h3>
+            <div class="process-box">
+                <p><strong>Form Fields:</strong></p>
+                <ul>
+                    <li>Patient Name (pre-filled from profile)</li>
+                    <li>Age (required)</li>
+                    <li>Gender - Male/Female/Other</li>
+                    <li>Contact Number (required)</li>
+                    <li>Disease/Prediction Result (pre-filled)</li>
+                    <li><span class="highlight">⭐ Scanning Report Upload (MANDATORY)</span></li>
+                </ul>
+                <p><strong>Upload Features:</strong></p>
+                <ul>
+                    <li>File size limit: 5MB (enforced)</li>
+                    <li>Auto-retry: Up to 2 attempts on failure</li>
+                    <li>Progress tracking: Shows upload percentage</li>
+                    <li>Supported formats: PDF, DOC, DOCX, JPG, JPEG, PNG</li>
+                    <li>Clear error messages for failures</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 1️⃣0️⃣: Submit Appointment</h3>
+            <div class="process-box">
+                <p><strong>Submission Process:</strong></p>
+                <ol>
+                    <li>Upload scanning report to Firebase Storage
+                        <br/><code>Path: scanning-reports/{patientUid}/{appointmentId}/{filename}</code></li>
+                    <li>Get download URL from Firebase</li>
+                    <li>Save appointment to Realtime Database
+                        <br/><code>Path: appointments/{appointmentId}</code></li>
+                    <li>Show success message</li>
+                </ol>
+                <p><strong>Data Saved:</strong></p>
+                <ul>
+                    <li>Doctor info: ID, name, specialization, hospital</li>
+                    <li>Patient info: Multiple UID variants for compatibility</li>
+                    <li>Medical data: Disease, modality, report URL</li>
+                    <li>Status: "pending"</li>
+                    <li>Timestamps: requestTime, createdAt</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 1️⃣1️⃣: Track Appointments</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /my-appointments</p>
+                <p>Real-time appointment dashboard displaying:</p>
+                <table>
+                    <tr>
+                        <th>Column</th>
+                        <th>Content</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Patient Name</td>
+                        <td>Your full name</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Age, Gender</td>
+                        <td>Your demographics</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Contact</td>
+                        <td>Phone number</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Disease</td>
+                        <td>Predicted condition</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Scanning Report</td>
+                        <td>Clickable link</td>
+                        <td>View</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>pending/accepted/rejected</td>
+                        <td>Color badge</td>
+                    </tr>
+                    <tr>
+                        <td>Checkup Date & Time</td>
+                        <td>Formatted date/time</td>
+                        <td>When scheduled</td>
+                    </tr>
+                    <tr>
+                        <td>Doctor Message</td>
+                        <td>Message from doctor</td>
+                        <td>NEW badge</td>
+                    </tr>
+                </table>
+                <p><strong>Status Indicators:</strong></p>
+                <ul>
+                    <li>🟡 <span class="badge badge-warning">pending</span> - Waiting for doctor response</li>
+                    <li>🟢 <span class="badge badge-success">accepted</span> - Doctor accepted, checkup scheduled</li>
+                    <li>🔴 <span class="badge badge-danger">rejected</span> - Doctor declined request</li>
+                </ul>
+                <p><strong>Notifications:</strong></p>
+                <ul>
+                    <li>NEW badge (red) appears when doctor responds</li>
+                    <li>"Mark all as read" button removes NEW badges</li>
+                    <li>Unread count displays in header</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 5: Doctor Workflow -->
+        <h1>5. Doctor Workflow (Complete Journey)</h1>
+        <div class="section">
+            <h3 style="color: #0f9bd7;">Step 1️⃣2️⃣: Doctor Dashboard</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /doctor-dashboard</p>
+                <p><strong>Dashboard Components:</strong></p>
+                <h4>1. Welcome Header</h4>
+                <ul>
+                    <li>Display: "Welcome, Dr. {Name}"</li>
+                    <li>Show specialization</li>
+                    <li>Logout button</li>
+                </ul>
+                <h4>2. Statistics Cards</h4>
+                <ul>
+                    <li>Total Requests: Count of all appointments</li>
+                    <li>Pending: Count of pending requests</li>
+                    <li>Accepted: Count of accepted appointments</li>
+                    <li>Rejected: Count of rejected requests</li>
+                </ul>
+                <h4>3. Profile Summary</h4>
+                <ul>
+                    <li>Clinic/Hospital name</li>
+                    <li>Location (city, state)</li>
+                    <li>Years of experience</li>
+                    <li>Availability status</li>
+                </ul>
+                <h4>4. Appointment Request Cards</h4>
+                <p>For each pending appointment:</p>
+                <ul>
+                    <li>Patient name and email</li>
+                    <li>Status badge (pending/accepted/rejected)</li>
+                    <li>Disease/Prediction result</li>
+                    <li>Contact info, age, gender</li>
+                    <li>⭐ <strong>View Scanning Report link</strong></li>
+                    <li>Action buttons: [Accept & Schedule] [Reject]</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 1️⃣3️⃣: Review Patient & Report</h3>
+            <div class="process-box">
+                <p><strong>When clicking "Accept & Schedule":</strong></p>
+                <ol>
+                    <li>Opens review page with appointment details</li>
+                    <li>Displays full patient information</li>
+                    <li>Shows disease diagnosis and prediction</li>
+                    <li>⭐ <strong>Provides clickable scanning report link</strong></li>
+                    <li>Doctor can download/view report before deciding</li>
+                </ol>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 1️⃣4️⃣: Accept & Schedule Appointment</h3>
+            <div class="process-box">
+                <p><strong>URL:</strong> /doctor-dashboard/appointment/{appointmentId}</p>
+                <p><strong>Doctor Inputs:</strong></p>
+                <ul>
+                    <li>Select checkup date (date picker)</li>
+                    <li>Select checkup time (time picker)</li>
+                    <li>Enter optional message (textarea)</li>
+                </ul>
+                <p><strong>Auto-Message Logic:</strong></p>
+                <p>If doctor doesn't enter a message, system generates:</p>
+                <code>"Doctor accepted your request. Checkup is scheduled on [formatted date and time]."</code>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Step 1️⃣5️⃣: Submit Acceptance & Send Notification</h3>
+            <div class="process-box">
+                <p><strong>Firebase Updates:</strong></p>
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Old Value</th>
+                        <th>New Value</th>
+                    </tr>
+                    <tr>
+                        <td>status</td>
+                        <td>"pending"</td>
+                        <td>"accepted"</td>
+                    </tr>
+                    <tr>
+                        <td>checkupDateTime</td>
+                        <td>None</td>
+                        <td>ISO date string</td>
+                    </tr>
+                    <tr>
+                        <td>doctorMessage</td>
+                        <td>None</td>
+                        <td>Message from doctor</td>
+                    </tr>
+                    <tr>
+                        <td>patientNotification</td>
+                        <td>None</td>
+                        <td>Same as doctorMessage</td>
+                    </tr>
+                    <tr>
+                        <td>patientNotificationSeen</td>
+                        <td>-</td>
+                        <td>false (NEW badge)</td>
+                    </tr>
+                    <tr>
+                        <td>acceptedAt</td>
+                        <td>-</td>
+                        <td>Current timestamp</td>
+                    </tr>
+                    <tr>
+                        <td>respondedAt</td>
+                        <td>-</td>
+                        <td>Current timestamp</td>
+                    </tr>
+                </table>
+                <p><strong>Result:</strong></p>
+                <ul>
+                    <li>Appointment status changes to "accepted"</li>
+                    <li>Checkup date/time saved to database</li>
+                    <li>Doctor message sent to patient</li>
+                    <li>NEW notification badge triggers for patient</li>
+                    <li>Doctor redirected back to dashboard</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #0f9bd7;">Reject Appointment (Alternative)</h3>
+            <div class="process-box">
+                <p>Doctor can reject by clicking [Reject] button on dashboard:</p>
+                <ul>
+                    <li>status → "rejected"</li>
+                    <li>patientNotification → "Your appointment request was rejected by doctor."</li>
+                    <li>patientNotificationSeen → false</li>
+                    <li>Patient sees rejection notification</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 6: Complete Appointment Lifecycle -->
+        <h1>6. Complete Appointment Lifecycle</h1>
+        <div class="section">
+            <div class="flow-diagram">STEP 1: PATIENT SUBMITS
+├─ Fills form (name, age, gender, contact, disease)
+├─ Uploads scanning report (mandatory, max 5MB)
+├─ Clicks "Submit Appointment Request"
+└─ Firebase: status = "pending"
+
+STEP 2: DOCTOR VIEWS
+├─ Opens dashboard
+├─ Sees pending appointment card
+├─ Views patient details
+├─ ⭐ Can click "View Report" to download
+└─ Clicks "Accept & Schedule" button
+
+STEP 3: DOCTOR SCHEDULES
+├─ Opens review page
+├─ Selects checkup date & time
+├─ Enters optional message
+├─ Clicks "Accept Appointment"
+└─ Firebase: status = "accepted"
+            └─ checkupDateTime = ISO date
+            └─ patientNotification = message
+            └─ patientNotificationSeen = false
+
+STEP 4: PATIENT SEES UPDATE
+├─ Refreshes "My Appointments"
+├─ Status changed to: ✅ ACCEPTED (green badge)
+├─ Displays: "Apr 20, 2026, 10:30 AM" (checkup date)
+├─ Shows: Doctor message with [NEW] badge
+└─ Patient can "Mark all as read" to remove badge
+
+✅ COMPLETE END-TO-END WORKFLOW
+            </div>
+        </div>
+
+        <!-- Section 7: Backend API -->
+        <h1>7. Backend API & ML Models</h1>
+        <div class="section">
+            <h3>Flask Prediction Server</h3>
+            <div class="info-box">
+                <p><strong>Base URL:</strong> http://localhost:5000</p>
+                <p><strong>Port:</strong> 5000 (default Flask port)</p>
+                <p><strong>CORS:</strong> Enabled for frontend requests</p>
+            </div>
+
+            <h3>API Endpoint: POST /predict</h3>
+            <h4>Request Format</h4>
+            <pre><code>POST /predict HTTP/1.1
+Host: localhost:5000
+Content-Type: multipart/form-data
+
+Body:
+  image: [binary file data]
+  modality: "xray" or "retina"</code></pre>
+
+            <h4>Response Format</h4>
+            <pre><code>{
+  "prediction": "Pneumonia",
+  "confidence_percent": 87.5,
+  "top_predictions": [
+    {
+      "label": "Pneumonia",
+      "confidence": 87.5
+    },
+    {
+      "label": "Tuberculosis",
+      "confidence": 8.2
+    },
+    {
+      "label": "Normal",
+      "confidence": 4.3
+    }
+  ],
+  "gradcam": "base64_encoded_heatmap_image",
+  "modality": "xray"
+}</code></pre>
+
+            <h3>ML Models</h3>
+            <table>
+                <tr>
+                    <th>Modality</th>
+                    <th>Model File</th>
+                    <th>Format</th>
+                    <th>Diseases</th>
+                </tr>
+                <tr>
+                    <td><strong>Chest X-ray</strong></td>
+                    <td>medical_model.keras</td>
+                    <td>TensorFlow Keras</td>
+                    <td>Normal, Pneumonia, Tuberculosis</td>
+                </tr>
+                <tr>
+                    <td><strong>Retina Fundus</strong></td>
+                    <td>EfficientNetB0_ODIR_OfflineAug.h5</td>
+                    <td>HDF5 Format</td>
+                    <td>Normal, AMD, Cataract, DR, Myopia, RVO</td>
+                </tr>
+            </table>
+
+            <h3>Model Processing Pipeline</h3>
+            <ol>
+                <li>Receive medical image from frontend</li>
+                <li>Image validation and preprocessing
+                    <ul>
+                        <li>Resize to 224x224 pixels</li>
+                        <li>Normalize pixel values</li>
+                        <li>Convert to tensor format</li>
+                    </ul>
+                </li>
+                <li>Load appropriate TensorFlow Keras model based on modality</li>
+                <li>Run inference (forward pass through neural network)</li>
+                <li>Extract prediction results
+                    <ul>
+                        <li>Top class prediction</li>
+                        <li>Confidence score (0-100%)</li>
+                        <li>Probabilities for all classes</li>
+                    </ul>
+                </li>
+                <li>Generate GradCAM visualization (attention heatmap)</li>
+                <li>Return JSON response to frontend</li>
+            </ol>
+
+            <h3>RAG Engine (Doctor Matching)</h3>
+            <p>Advanced doctor recommendation using:</p>
+            <ul>
+                <li><strong>Chroma:</strong> Vector database for embeddings</li>
+                <li><strong>LangChain:</strong> Vector search and matching</li>
+                <li><strong>Embeddings:</strong> Convert doctor profiles to vectors</li>
+                <li><strong>Similarity Search:</strong> Find best matching doctors</li>
+                <li><strong>Specialization Scoring:</strong> Weight by specialty relevance</li>
+            </ul>
+        </div>
+
+        <!-- Section 8: Database -->
+        <h1>8. Firebase Database Structure</h1>
+        <div class="section">
+            <h3>Realtime Database (/)</h3>
+            <pre><code>/users/{patientUid}/
+  ├─ email: "patient@email.com"
+  ├─ displayName: "Patient Name"
+  ├─ role: "patient"
+  └─ createdAt: timestamp
+
+/doctors/{doctorUid}/
+  ├─ doctorId: "doctor_uid"
+  ├─ email: "doctor@email.com"
+  ├─ fullName: "Dr. Name"
+  ├─ specialization: "Pulmonology"
+  ├─ hospitalName: "Hospital XYZ"
+  ├─ location: "City, State"
+  ├─ yearsOfExperience: 10
+  ├─ availability: "9AM-5PM"
+  ├─ phone: "1234567890"
+  ├─ role: "doctor"
+  └─ createdAt: timestamp
+
+/appointments/{appointmentId}/
+  ├─ doctorId: "doctor_uid"
+  ├─ doctorName: "Dr. Name"
+  ├─ doctorSpecialization: "Pulmonology"
+  ├─ hospital: "Hospital Name"
+  ├─ hospitalName: "Hospital Name"
+  ├─ location: "City, State"
+  ├─ patientId: "patient_uid"
+  ├─ patientUid: "patient_uid"
+  ├─ userId: "patient_uid"
+  ├─ uid: "patient_uid"
+  ├─ patientEmail: "patient@email.com"
+  ├─ email: "patient@email.com"
+  ├─ patientName: "Patient Name"
+  ├─ age: 25
+  ├─ gender: "Male"
+  ├─ phone: "1234567890"
+  ├─ disease: "Pneumonia"
+  ├─ diseaseName: "Pneumonia"
+  ├─ modality: "xray"
+  ├─ scanningReportUrl: "https://..."
+  ├─ retinaReportUrl: "https://..."
+  ├─ status: "pending" | "accepted" | "rejected"
+  ├─ requestTime: "ISO timestamp"
+  ├─ createdAt: "ISO timestamp"
+  ├─ acceptedAt: "ISO timestamp"
+  ├─ respondedAt: "ISO timestamp"
+  ├─ checkupDateTime: "ISO timestamp"
+  ├─ doctorMessage: "Message text"
+  ├─ patientNotification: "Message text"
+  ├─ patientNotificationSeen: false | true
+  └─ notificationReadAt: "ISO timestamp"</code></pre>
+
+            <h3>Cloud Storage (/scanning-reports)</h3>
+            <pre><code>/scanning-reports/
+  └─ {patientUid}/
+      └─ {appointmentId}/
+          └─ {filename}  ← Uploaded medical report/image</code></pre>
+
+            <h3>Data Matching Strategy</h3>
+            <div class="info-box">
+                <p><strong>Write-side:</strong> Store all identity variants</p>
+                <ul>
+                    <li>Patient IDs: patientId, patientUid, userId, uid</li>
+                    <li>Emails: patientEmail, email</li>
+                    <li>Names: patientName, name</li>
+                </ul>
+                <p><strong>Read-side:</strong> Match on ANY variant</p>
+                <ul>
+                    <li>Ensures appointments always found</li>
+                    <li>Compatible with legacy records</li>
+                    <li>Handles incomplete field scenarios</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 9: Technology Stack -->
+        <h1>9. Technology Stack</h1>
+        <div class="section">
+            <h3>Frontend</h3>
+            <table>
+                <tr>
+                    <th>Technology</th>
+                    <th>Version</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td><strong>React</strong></td>
+                    <td>18+</td>
+                    <td>UI framework and component library</td>
+                </tr>
+                <tr>
+                    <td><strong>React Router</strong></td>
+                    <td>v6</td>
+                    <td>Client-side routing and navigation</td>
+                </tr>
+                <tr>
+                    <td><strong>Firebase</strong></td>
+                    <td>Latest</td>
+                    <td>Auth, Database, Storage, Firestore</td>
+                </tr>
+                <tr>
+                    <td><strong>React Icons</strong></td>
+                    <td>Latest</td>
+                    <td>SVG icon library</td>
+                </tr>
+                <tr>
+                    <td><strong>Bootstrap</strong></td>
+                    <td>5</td>
+                    <td>Responsive CSS framework</td>
+                </tr>
+                <tr>
+                    <td><strong>CSS</strong></td>
+                    <td>Custom</td>
+                    <td>Custom styling and animations</td>
+                </tr>
+            </table>
+
+            <h3>Backend</h3>
+            <table>
+                <tr>
+                    <th>Technology</th>
+                    <th>Version</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td><strong>Flask</strong></td>
+                    <td>2.0+</td>
+                    <td>Python web framework</td>
+                </tr>
+                <tr>
+                    <td><strong>TensorFlow</strong></td>
+                    <td>2.13+</td>
+                    <td>ML framework for Keras models</td>
+                </tr>
+                <tr>
+                    <td><strong>Keras</strong></td>
+                    <td>Built-in</td>
+                    <td>Neural network API</td>
+                </tr>
+                <tr>
+                    <td><strong>PIL/Pillow</strong></td>
+                    <td>9.0+</td>
+                    <td>Image processing library</td>
+                </tr>
+                <tr>
+                    <td><strong>NumPy</strong></td>
+                    <td>1.21+</td>
+                    <td>Numerical computing</td>
+                </tr>
+                <tr>
+                    <td><strong>Flask-CORS</strong></td>
+                    <td>Latest</td>
+                    <td>Cross-Origin Resource Sharing</td>
+                </tr>
+                <tr>
+                    <td><strong>Chroma</strong></td>
+                    <td>0.5.x+</td>
+                    <td>Vector database for RAG</td>
+                </tr>
+                <tr>
+                    <td><strong>LangChain</strong></td>
+                    <td>0.2.x+</td>
+                    <td>LLM framework for doctor matching</td>
+                </tr>
+            </table>
+
+            <h3>Infrastructure & Services</h3>
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Purpose</th>
+                    <th>Configuration</th>
+                </tr>
+                <tr>
+                    <td><strong>Firebase Project</strong></td>
+                    <td>Cloud backend services</td>
+                    <td>healthcare-assistant-app-3c14a</td>
+                </tr>
+                <tr>
+                    <td><strong>Firebase Auth</strong></td>
+                    <td>User authentication</td>
+                    <td>Email + Google OAuth enabled</td>
+                </tr>
+                <tr>
+                    <td><strong>Realtime Database</strong></td>
+                    <td>NoSQL database</td>
+                    <td>users/, doctors/, appointments/ nodes</td>
+                </tr>
+                <tr>
+                    <td><strong>Cloud Storage</strong></td>
+                    <td>File storage</td>
+                    <td>scanning-reports/ bucket</td>
+                </tr>
+                <tr>
+                    <td><strong>Flask Server</strong></td>
+                    <td>API and ML inference</td>
+                    <td>localhost:5000 (development)</td>
+                </tr>
+            </table>
+
+            <h3>Key Libraries & Dependencies</h3>
+            <div class="feature-list">
+                <div class="feature-item"><strong>axios</strong> - HTTP client</div>
+                <div class="feature-item"><strong>react-icons</strong> - Icon library</div>
+                <div class="feature-item"><strong>bootstrap</strong> - CSS framework</div>
+                <div class="feature-item"><strong>tensorflow</strong> - ML models</div>
+                <div class="feature-item"><strong>firebase</strong> - Backend services</div>
+                <div class="feature-item"><strong>chroma</strong> - Vector search</div>
+            </div>
+        </div>
+
+        <!-- Section 10: Deployment & Configuration -->
+        <h1>10. Deployment & Configuration</h1>
+        <div class="section">
+            <h3>Environment Variables (.env)</h3>
+            <h4>Frontend</h4>
+            <pre><code>REACT_APP_API_ENDPOINT=http://localhost:5000/predict
+REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_domain.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=healthcare-assistant-app-3c14a
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_bucket.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id</code></pre>
+
+            <h4>Backend</h4>
+            <pre><code>XRAY_MODEL_FILENAME=medical_model.keras
+RETINA_MODEL_FILENAME=EfficientNetB0_ODIR_OfflineAug.h5
+DEFAULT_IMAGE_SIZE=224
+PREPROCESS_MODE=auto
+SCALE_INPUT=true
+FLASK_ENV=development
+FLASK_DEBUG=true</code></pre>
+
+            <h3>Deployment Checklist</h3>
+            <ul>
+                <li>✅ Backend Flask server running on port 5000</li>
+                <li>✅ Firebase project configured and credentials set</li>
+                <li>✅ ML models placed in backend/model/ directory</li>
+                <li>✅ CORS enabled for frontend URLs</li>
+                <li>✅ Firebase Realtime Database rules configured</li>
+                <li>✅ Cloud Storage bucket created and accessible</li>
+                <li>✅ Environment variables configured</li>
+                <li>✅ Frontend builds without errors</li>
+                <li>✅ API endpoint correctly configured</li>
+                <li>✅ Database indexes created for better performance</li>
+            </ul>
+
+            <h3>Running the Application</h3>
+            <h4>Backend (Flask)</h4>
+            <pre><code>cd backend
+python app.py
+# Server starts on http://localhost:5000</code></pre>
+
+            <h4>Frontend (React)</h4>
+            <pre><code>npm start
+# Application opens on http://localhost:3000</code></pre>
+        </div>
+
+        <!-- Section 11: Troubleshooting -->
+        <h1>11. Troubleshooting Guide</h1>
+        <div class="section">
+            <table>
+                <tr>
+                    <th>Issue</th>
+                    <th>Cause</th>
+                    <th>Solution</th>
+                </tr>
+                <tr>
+                    <td>"Cannot reach prediction server"</td>
+                    <td>Backend not running</td>
+                    <td>Start Flask server on port 5000</td>
+                </tr>
+                <tr>
+                    <td>"Firebase permission denied"</td>
+                    <td>Database rules not configured</td>
+                    <td>Update Firebase Database rules</td>
+                </tr>
+                <tr>
+                    <td>"Model not found"</td>
+                    <td>Models not in backend/model/</td>
+                    <td>Place model files in correct directory</td>
+                </tr>
+                <tr>
+                    <td>"Upload timeout"</td>
+                    <td>Network or file size issue</td>
+                    <td>Check connection; ensure file ≤ 5MB</td>
+                </tr>
+                <tr>
+                    <td>"Doctor not found"</td>
+                    <td>Incomplete doctor profile</td>
+                    <td>Complete doctor signup details</td>
+                </tr>
+                <tr>
+                    <td>"Appointment not saving"</td>
+                    <td>Database connection issue</td>
+                    <td>Check Firebase credentials</td>
+                </tr>
+                <tr>
+                    <td>"GradCAM not displaying"</td>
+                    <td>Base64 encoding issue</td>
+                    <td>Verify image preprocessing</td>
+                </tr>
+                <tr>
+                    <td>"Login fails repeatedly"</td>
+                    <td>Role mismatch or auth error</td>
+                    <td>Check user role in database</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 12: Future Enhancements -->
+        <h1>12. Future Enhancements</h1>
+        <div class="section">
+            <div class="feature-list">
+                <div class="feature-item">📲 Real-time notifications (WebSocket/Firebase Cloud Messaging)</div>
+                <div class="feature-item">🎥 Video consultation scheduling</div>
+                <div class="feature-item">💊 Prescription management system</div>
+                <div class="feature-item">📊 Medical history tracking</div>
+                <div class="feature-item">💳 Payment integration</div>
+                <div class="feature-item">🌍 Multi-language support</div>
+                <div class="feature-item">📱 Mobile app version</div>
+                <div class="feature-item">📈 Advanced analytics dashboard</div>
+                <div class="feature-item">✉️ Email notifications</div>
+                <div class="feature-item">🔔 Appointment reminders</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="margin-top: 60px; padding-top: 20px; border-top: 2px solid #0f9bd7; text-align: center; color: #666;">
+            <p><strong>Healthcare Assistant - AI-Powered Medical Diagnostic Platform</strong></p>
+            <p style="font-size: 12px;">Version 1.0 | Last Updated: April 17, 2026 | Status: Production Ready ✅</p>
+            <p style="font-size: 12px;">© 2026 Healthcare Assistant. All rights reserved.</p>
+            <p style="font-size: 11px; color: #999; margin-top: 10px;">
+                <strong>To Download as PDF:</strong> Use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF"
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-format on load
+        window.addEventListener('load', function() {
+            console.log('📄 Healthcare Assistant Documentation loaded');
+            console.log('💡 To download as PDF: Ctrl+P (Windows) or Cmd+P (Mac), then select "Save as PDF"');
+        });
+    </script>
+</body>
+</html>

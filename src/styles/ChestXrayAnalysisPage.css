@@ -1,0 +1,99 @@
+/* ChestXrayAnalysisPage.css */
+
+.analysis-detail-page {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+}
+
+.analysis-detail-head .eyebrow {
+  font-weight: 600;
+  color: #007bff;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.analysis-detail-head h1 {
+  font-weight: 700;
+  color: #343a40;
+}
+
+.analysis-back-btn {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.analysis-back-btn:hover {
+  color: #0056b3;
+}
+
+.analysis-hero-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.analysis-hero-title {
+  font-weight: 700;
+  color: #343a40;
+}
+
+.analysis-hero-visual img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.upload-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hybrid-input-panel {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.analysis-textarea {
+  resize: vertical;
+}
+
+.preview-shell {
+  border: 2px dashed #dee2e6;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.preview-shell.placeholder .placeholder-copy {
+  text-align: center;
+  color: #6c757d;
+}
+
+.preview-shell.placeholder .placeholder-copy i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#imagePreview {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 5px;
+}
+
+.loading-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}

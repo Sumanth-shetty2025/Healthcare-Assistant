@@ -1,0 +1,41 @@
+# Node / React
+node_modules/
+build/
+dist/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python / Flask
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+
+# Backend generated artifacts
+backend/.venv/
+backend/__pycache__/
+backend/*.log
+
+# Secrets and local service credentials
+backend/serviceAccountKey.json
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/

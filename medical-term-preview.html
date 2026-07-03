@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Term Highlighting Preview</title>
+    <style>
+        :root {
+            --primary: #0f9bd7;
+            --muted: #6b7688;
+            --dark: #051937;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', 'Outfit', sans-serif;
+            background: #f6fbff;
+            padding: 20px;
+            color: var(--dark);
+        }
+        
+        .report-section-detail-block {
+            margin-top: 1rem;
+            padding: 1rem 1.1rem;
+            border-radius: 18px;
+            background: #f4f9ff;
+            border: 1px solid rgba(15, 155, 215, 0.15);
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .report-section-detail-block h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .report-section-detail-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .report-detail-line {
+            line-height: 1.6;
+            color: var(--muted);
+            margin: 0;
+        }
+        
+        .medical-term {
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(15, 155, 215, 0.15);
+            padding: 0.2rem 0.45rem;
+            border-radius: 5px;
+            display: inline-block;
+            border-left: 3px solid var(--primary);
+            margin: 0 0.15rem;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="report-section-detail-block">
+        <h6>Detailed Explanation</h6>
+        <div class="report-section-detail-content">
+            <div class="report-detail-line">- Core section insight: <span class="medical-term">Disease Characteristics</span> for <span class="medical-term">Retinal Vein Occlusion</span> suggests branch retinal vein occlusion (BRVO) or central retinal vein occlusion (CRVO).</div>
+            <div class="report-detail-line">- Key clinical context: interpret <span class="medical-term">Retinal Vein Occlusion</span> with imaging pattern, symptom timeline, and risk profile.</div>
+            <div class="report-detail-line">- Diagnostic support: correlate findings with history, examination, and targeted laboratory or specialist evaluation.</div>
+            <div class="report-detail-line">- Treatment planning: review suitable <span class="medical-term">medicine</span> options, non-pharmacologic care, and expected response monitoring.</div>
+            <div class="report-detail-line">- Prevention strategy: reinforce risk-factor control, adherence, and regular <span class="medical-term">screening</span> where applicable.</div>
+            <div class="report-detail-line">- Follow-up focus: track progression, red-flag worsening, and need for escalation or referral.</div>
+            <div class="report-detail-line">- Safety note: discuss all treatment decisions with a qualified clinician before acting on this summary.</div>
+        </div>
+    </div>
+</body>
+</html>
