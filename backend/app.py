@@ -17,13 +17,6 @@ import tensorflow as tf
 import PyPDF2
 import joblib
 
-# Import RAG engine
-try:
-    from rag_engine import init_rag_engine, get_rag_engine
-    RAG_AVAILABLE = True
-except ImportError:
-    RAG_AVAILABLE = False
-
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "model"
 XRAY_MODEL_FILENAME = os.getenv("XRAY_MODEL_FILENAME", os.getenv("MODEL_FILENAME", "medical_model.keras"))
@@ -34,18 +27,6 @@ PREPROCESS_MODE = os.getenv("PREPROCESS_MODE", "auto").lower()
 
 app = Flask(__name__)
 CORS(app)
-
-# Initialize RAG engine on startup
-rag_engine = None
-
-@app.before_request
-def setup_rag():
-    global rag_engine
-    if RAG_AVAILABLE and rag_engine is None:
-        try:
-            rag_engine = init_rag_engine()
-        except Exception as e:
-            print(f"Warning: RAG initialization failed: {e}")
 
 
 def _load_class_names(label_path: str) -> List[str] | None:
@@ -811,138 +792,6 @@ def predict():
             "gradcam": gradcam_data,
         }
     )
-
-
-# RAG endpoints for disease information retrieval
-@app.route("/api/disease-info", methods=["POST"])
-def get_disease_info():
-    """
-    Retrieve disease information using RAG engine.
-    
-    Request body:
-    {
-        "disease": "tuberculosis",
-        "modality": "xray"  (optional)
-    }
-    
-    Response:
-    {
-        "success": true,
-        "disease": "tuberculosis",
-        "modality": "xray",
-        "information": {
-            "characteristics": "...",
-            "symptoms": "...",
-            "treatment": "...",
-            "prevention": "...",
-            "advice": "..."
-        }
-    }
-    """
-    try:
-        if not RAG_AVAILABLE:
-            return jsonify({
-                "error": "RAG engine not available. Install chromadb and langchain packages."
-            }), 503
-        
-        data = request.json
-        if not data:
-            return jsonify({"error": "Request body required"}), 400
-        
-        disease_name = data.get("disease", "").strip()
-        modality = "xray"
-        
-        if not disease_name:
-            return jsonify({"error": "Disease name required in request body"}), 400
-        
-        # Retrieve disease information from RAG engine
-        rag_engine = get_rag_engine()
-        disease_info = rag_engine.retrieve_disease_info(disease_name)
-        
-        return jsonify({
-            "success": True,
-            "disease": disease_name,
-            "modality": modality,
-            "information": disease_info
-        }), 200
-        
-    except Exception as e:
-        print(f"Error in /api/disease-info: {e}")
-        return jsonify({"error": str(e)}), 500
-
-
-@app.route("/api/diseases", methods=["GET"])
-def list_diseases():
-    """
-    Get list of all available diseases in knowledge base.
-    
-    Response:
-    {
-        "diseases": ["tuberculosis", "pneumonia", "normal", ...]
-    }
-    """
-    try:
-        if not RAG_AVAILABLE:
-            return jsonify({"diseases": []}), 200
-        
-        rag_engine = get_rag_engine()
-        diseases = rag_engine.get_all_diseases()
-        
-        return jsonify({"diseases": diseases}), 200
-        
-    except Exception as e:
-        print(f"Error in /api/diseases: {e}")
-        return jsonify({"error": str(e)}), 500
-
-
-@app.route("/api/disease-section-detail", methods=["POST"])
-def get_disease_section_detail():
-    """Generate detailed section content for the scanning report cards.
-
-    Request body:
-    {
-        "disease": "tuberculosis",
-        "section": "Symptoms",
-        "modality": "xray"  (optional)
-    }
-    """
-    try:
-        if not RAG_AVAILABLE:
-            return jsonify({
-                "error": "RAG engine not available. Install chromadb and langchain packages."
-            }), 503
-
-        data = request.json or {}
-        disease_name = str(data.get("disease", "")).strip()
-        section = str(data.get("section", "")).strip()
-        modality = str(data.get("modality", "xray")).strip().lower()
-
-        if not disease_name:
-            return jsonify({"error": "Disease name required in request body"}), 400
-        if not section:
-            return jsonify({"error": "Section name required in request body"}), 400
-
-        if modality not in SUPPORTED_MODALITIES:
-            modality = "xray"
-
-        rag_engine = get_rag_engine()
-        detail_payload = rag_engine.generate_detailed_section_explanation(
-            disease_name=disease_name,
-            section=section,
-            modality=modality,
-        )
-
-        return jsonify({
-            "success": True,
-            "disease": disease_name,
-            "modality": modality,
-            "section": section,
-            "detail": detail_payload,
-        }), 200
-
-    except Exception as e:
-        print(f"Error in /api/disease-section-detail: {e}")
-        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":

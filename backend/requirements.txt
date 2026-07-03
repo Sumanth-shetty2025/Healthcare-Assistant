@@ -5,12 +5,6 @@ tensorflow>=2.15.0
 pillow>=10.0.0
 numpy>=1.26.0
 requests>=2.31.0
-# RAG dependencies (optional - install for disease information retrieval)
-chromadb>=0.5.0
-langchain>=0.1.0
-langchain-community>=0.1.0
-langchain-huggingface>=0.0.0
-sentence-transformers>=2.2.0
 PyPDF2>=3.0.0
 scikit-learn>=1.2.0
 joblib>=1.2.0
