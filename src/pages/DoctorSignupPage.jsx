@@ -119,7 +119,7 @@ export default function DoctorSignupPage() {
       setExistingLicenseDocumentUrl(reapplyRecord.licenseDocument || reapplyRecord.licenseDocumentUrl || reapplyRecord.documents?.licenseDocumentUrl || null);
       setExistingIdDocumentUrl(reapplyRecord.doctorCertificate || reapplyRecord.idDocument || reapplyRecord.documents?.idDocumentUrl || null);
     }
-  }, []);
+  }, [isReapply, reapplyRecord]);
 
   const getNameFromUrl = (url) => {
     if (!url) return null;
